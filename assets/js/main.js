@@ -51,12 +51,6 @@
 							event.preventDefault();
 
 						// Remove active class from all links and mark them as locked (so scrollzer leaves them alone).
-							$nav_a
-								.removeClass('active')
-								.addClass('scrollzer-locked');
-
-						// Set active class on this link.
-							$this.addClass('active');
 
 					})
 					.each(function() {

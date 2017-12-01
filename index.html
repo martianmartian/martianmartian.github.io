@@ -20,9 +20,9 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li @click="gothis(1)"><a href="#" href="#one" class="active">About Me</a></li>
-						<li @click="gothis(2)"><a href="#" href="#two">Things I Can Do</a></li>
-						<li @click="gothis(3)"><a href="#" href="#three">Interesting Projects</a></li>
+						<li @click="gothis(1)"><a href="#" v-bind:class="{ active: seen==1 }">About Me</a></li>
+						<li @click="gothis(2)"><a href="#" v-bind:class="{ active: seen==2 }">Things I Can Do</a></li>
+						<li @click="gothis(3)"><a href="#" v-bind:class="{ active: seen==3 }">Interesting Projects</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -169,9 +169,9 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a @click="gothis(1)" href="#one" class="active">关于我</a></li>
-						<li><a @click="gothis(2)" href="#two">我的能力</a></li>
-						<li><a @click="gothis(3)" href="#three">参与(过)项目</a></li>
+						<li><a @click="gothis(1)" href="#" v-bind:class="{ active: seen==1 }">关于我</a></li>
+						<li><a @click="gothis(2)" href="#" v-bind:class="{ active: seen==2 }">我的能力</a></li>
+						<li><a @click="gothis(3)" href="#" v-bind:class="{ active: seen==3 }">参与(过)项目</a></li>
 					</ul>
 				</nav>
 				<footer>
