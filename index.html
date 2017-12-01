@@ -9,143 +9,257 @@
 		<script type="text/javascript" src="js/vue-router.js"></script>
 	</head>
 	<div id="app">
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Mart Q.</a></h1>
-					<p>Loop: think, read, make it happen.</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li @click="gothis(1)"><a>About Me</a></li>
-						<li @click="gothis(2)"><a>Things I Can Do</a></li>
-						<li @click="gothis(3)"><a>Interesting Projects</a></li>
-						<!-- <li @click="gothis(4)"><a>Contact</a></li> -->
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div v-if="lang=='EN'">
+			<!-- Header -->
+				<section id="header">
+					<header>
+						<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+						<h1 id="logo"><a href="#">Mart Q.</a></h1>
+						<p>Loop: think, read, make it happen.</p>
+					</header>
+					<nav id="nav">
+						<ul>
+							<li @click="gothis(1)"><a>About Me</a></li>
+							<li @click="gothis(2)"><a>Things I Can Do</a></li>
+							<li @click="gothis(3)"><a>Interesting Projects</a></li>
+						</ul>
+					</nav>
+					<footer>
+						<ul class="icons">
+							<li><a href="https://github.com/martianmartian" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:flying2mars_x@163.com?Subject=你好！" class="icon fa-envelope"><span class="label">Email</span></a></li>
+							<li><button class="btn" @click="switchLan">中/EN</button></li>
+						</ul>
+					</footer>
+				</section>
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Wrapper -->
+				<div id="wrapper">
 
-						<!-- One -->
-							<section id="one" v-if="seen==1">
-								<div class="container">
-									<header class="major">
-										<h2>Hi ! I'm Mart Q.</h2>
-										<p>About me: </p>
-									</header>
-									<p> Enjoys philosophical topics. <br/>
-										Writes some software. <br/>
-										Designs some futuristic transportation system. <br/>
-										Knows a few jokes. <br/>
-									</p>
-								</div>
-							</section>
+					<!-- Main -->
+						<div id="main">
 
-						<!-- Two -->
-							<section id="two" v-if="seen==2">
-								<div class="container">
-									<header class="major">
-										<h2>Hi ! I'm Mart Q.</h2>
-									</header>
-									<h3>As a developer, I'm familiar with these programing tools:</h3>
-									<ul class="feature-icons">
-										<li class="fa-coffee">Angularjs, Vuejs, JQuery (Javascript)</li>
-										<li class="fa-cubes">Numpy (Python)</li>
-										<li class="fa-book">Alamofire (Swift)</li>
-										<li class="fa-code">HTML, CSS</li>
-									</ul>
-									<p>I enjoy making slightly complicated front-end things, but not so much into styling them well haha.</p>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" v-if="seen==3">
-								<div class="container">
-									<h3>Interesting Projects</h3>
-									<p>Imagination is one thing I'm proud of myself for.</p>
-									<div class="features">
-										<article>
-											<a href="https://gitee.com/martian2049/jtdemo.git" target="_blank" class="image"><img src="images/laizuoke.jpg" alt="" /></a>
-											<div class="inner">
-												<a href="https://gitee.com/martian2049/jtdemo.git" target="_blank">
-												<h4>仿来做客(angularjs/vuejs)</h4>
-												<p>Make simple <b>animated power points</b> on the website and view it on mobile. This web app targets large enterprises like banks and help with their employee training. It can also be used for mobile ad-campaign. It's one of the most complicated web apps I have worked on. Incomplete, but the logic outline was mostly finished. </p></a>
-											</div>
-										</article>
-										<article>
-											<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank" class="image"><img src="images/archy.jpg" alt="" /></a>
-											<div class="inner">
-												<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank">
-												<h4>3D-rails transportation system (3D modeling)</h4>
-												<p>Cars are clumpsy. In a crowded city, humans are primary cargos. 3D-rails is a futuristic system designed for human only. It relies on elevated light rails and light-weighted smart electric cars to transport human at roughly 30-50km/h in city, wihtout interference of traffic lights. </p></a>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/martianmartian/audio2005/tree/master2" class="image"><img src="images/audio2005-1.jpg" alt="" target="_blank" /></a>
-											<div class="inner">
-												<a target="_blank" href="https://github.com/martianmartian/audio2005/tree/master2"><h4>audio2005 (IOS, swift)</h4>
-												<p>Who uses iTune Music these days? No one. This app allows you to <b>play mp3 in your phone</b> with a much more <b>simplistic interface</b>. Unfortunately I don't have apple dev account so haven't yet published it. You can download and try with XCode.</p></a>
-											</div>
-										</article>
+							<!-- One -->
+								<section id="one" v-if="seen==1">
+									<div class="container">
+										<header class="major">
+											<h2>Hi ! I'm Mart Q.</h2>
+											<p>About me: </p>
+										</header>
+										<p> Enjoys philosophical topics. <br/>
+											Writes some software. <br/>
+											Designs some futuristic transportation system. <br/>
+											Knows a few jokes. <br/>
+										</p>
 									</div>
-								</div>
-							</section>
+								</section>
 
-						<!-- Four -->
-							<section id="four" v-if="seen==4">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="6u 12u(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
+							<!-- Two -->
+								<section id="two" v-if="seen==2">
+									<div class="container">
+										<header class="major">
+											<h2>Hi ! I'm Mart Q.</h2>
+										</header>
+										<h3>As a developer, I'm familiar with these programing tools:</h3>
+										<ul class="feature-icons">
+											<li class="fa-coffee">Angularjs, Vuejs, JQuery (Javascript)</li>
+											<li class="fa-cubes">Numpy (Python)</li>
+											<li class="fa-book">Alamofire (Swift)</li>
+											<li class="fa-code">HTML, CSS</li>
+										</ul>
+										<p>I enjoy making slightly complicated front-end things, but not so much into styling them well haha.</p>
+									</div>
+								</section>
+
+							<!-- Three -->
+								<section id="three" v-if="seen==3">
+									<div class="container">
+										<h3>Interesting Projects</h3>
+										<p>Imagination is one thing I'm proud of myself for.</p>
+										<div class="features">
+											<article>
+												<a href="https://github.com/martianmartian/audio2005/tree/master2" class="image"><img src="images/audio2005-1.jpg" alt="" target="_blank" /></a>
+												<div class="inner">
+													<a target="_blank" href="https://github.com/martianmartian/audio2005/tree/master2"><h4>audio2005 (IOS, swift)</h4>
+													<p>Who uses iTune Music these days? No one. This app allows you to <b>play mp3 in your phone</b> with a much more <b>simplistic interface</b>. Unfortunately I don't have apple dev account so haven't yet published it. You can download and try with XCode.</p></a>
+												</div>
+											</article>
+											<article>
+												<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank" class="image"><img src="images/archy.jpg" alt="" /></a>
+												<div class="inner">
+													<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank">
+													<h4>3D-rails transportation system (3D modeling)</h4>
+													<p>Cars are clumpsy. In a crowded city, humans are primary cargos. 3D-rails is a futuristic system designed for human only. It relies on elevated light rails and light-weighted smart electric cars to transport human at roughly 30-50km/h in city, wihtout interference of traffic lights. </p></a>
+												</div>
+											</article>										
+											<article>
+												<a href="https://gitee.com/martian2049/jtdemo.git" target="_blank" class="image"><img src="images/laizuoke.jpg" alt="" /></a>
+												<div class="inner">
+													<h4>仿 <a href="http://mlearning-tools.pingan.com.cn/learn/cwtools/#!/">来做客</a>(angularjs/vuejs)</h4>
+													<a href="https://gitee.com/martian2049/jtdemo.git" target="_blank">
+													<p>Make simple <b>animated power points</b> on the website and view it on mobile. This web app targets large enterprises like banks and help with their employee training. It can also be used for mobile ad-campaign. It's one of the most complicated web apps I have worked on. Incomplete, but the logic outline was mostly finished. </p></a>
+												</div>
+											</article>
 										</div>
-										<div class="row uniform">
-											<div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-										</div>
-										<div class="row uniform">
-											<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-										</div>
-										<div class="row uniform">
-											<div class="12u">
-												<ul class="actions">
-													<li><input type="submit" class="special" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
+									</div>
+								</section>
+
+							<!-- Four -->
+								<section id="four" v-if="seen==4">
+									<div class="container">
+										<h3>Contact Me</h3>
+										<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+										<form method="post" action="#">
+											<div class="row uniform">
+												<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
+												<div class="6u 12u(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
 											</div>
-										</div>
-									</form>
-								</div>
-							</section>
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>2017 - 2019 Mart Q. <br/>
-								Email him: flying2mars_x@163.com <br/>
-								Call him: +86-18257122431 <br/>
-								wechat: iamwave007
-							</li>
-							</ul>
+											<div class="row uniform">
+												<div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+											</div>
+											<div class="row uniform">
+												<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+											</div>
+											<div class="row uniform">
+												<div class="12u">
+													<ul class="actions">
+														<li><input type="submit" class="special" value="Send Message" /></li>
+														<li><input type="reset" value="Reset Form" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</div>
+								</section>
 						</div>
-					</section>
 
-			</div>
+					<!-- Footer -->
+						<section id="footer">
+							<div class="container">
+								<ul class="copyright">
+									<li>2017 - 2019 Mart Q. <br/>
+									Email: flying2mars_x@163.com <br/>
+									Call: +86-18257122431 <br/>
+									wechat: iamwave007
+								</li>
+								</ul>
+							</div>
+						</section>
+				
+				</div>
+		</div>
+
+		<div v-if="lang=='CH'">
+			<!-- Header -->
+				<section id="header">
+					<header>
+						<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+						<h1 id="logo"><a href="#">屈霄</a></h1>
+						<p>循环: 思考, 阅读, 实现。</p>
+					</header>
+					<nav id="nav">
+						<ul>
+							<li @click="gothis(1)"><a>关于我</a></li>
+							<li @click="gothis(2)"><a>我的能力</a></li>
+							<li @click="gothis(3)"><a>参与(过)项目</a></li>
+						</ul>
+					</nav>
+					<footer>
+						<ul class="icons">
+							<li><a href="https://github.com/martianmartian" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:flying2mars_x@163.com?Subject=你好！" class="icon fa-envelope"><span class="label">Email</span></a></li>
+							<li><button class="btn" @click="switchLan">中/EN</button></li>
+						</ul>
+					</footer>
+				</section>
+
+				<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Main -->
+						<div id="main">
+
+							<!-- One -->
+								<section id="one" v-if="seen==1">
+									<div class="container">
+										<header class="major">
+											<h2>嗨，我是屈霄</h2>
+											<p>关于我：</p>
+										</header>
+										<p> 爱好哲理点的话题。 <br/>
+											我会写软件。 <br/>
+											空闲的时间用来设计一种未来式的交通系统。 <br/>
+											会几个笑话。 <br/>
+										</p>
+									</div>
+								</section>
+
+							<!-- Two -->
+								<section id="two" v-if="seen==2">
+									<div class="container">
+										<header class="major">
+											<h2>嗨，我是屈霄</h2>
+										</header>
+										<h3>作为一个开发者，我熟悉一下的工具：</h3>
+										<ul class="feature-icons">
+											<li class="fa-coffee">Angularjs, Vuejs, JQuery (Javascript)</li>
+											<li class="fa-cubes">Numpy (Python)</li>
+											<li class="fa-book">Alamofire (Swift)</li>
+											<li class="fa-code">HTML, CSS</li>
+										</ul>
+										<p>我擅长做复杂的网页前端应用，不过通常不会花太多的时间修饰页面的样式；除非有需求。</p>
+									</div>
+								</section>
+
+							<!-- Three -->
+								<section id="three" v-if="seen==3">
+									<div class="container">
+										<h3>几个有趣的项目</h3>
+										<p>我的想象力ok的。</p>
+										<div class="features">
+											<article>
+												<a href="https://github.com/martianmartian/audio2005/tree/master2" class="image"><img src="images/audio2005-1.jpg" alt="" target="_blank" /></a>
+												<div class="inner">
+													<a target="_blank" href="https://github.com/martianmartian/audio2005/tree/master2"><h4>audio2005 (IOS, swift)</h4>
+													<p>这年头还有人在用iTune和苹果手机的Music嘛？没有人在用的。我的这款苹果手机app可以让你重新爱上在手机里面播放自己上传的mp3文件；用户界面极其的简洁。不幸的是，由于我没有苹果的开发者账号，这款app还没有能在应用店里发布；但是感兴趣的人可以下载我的代码，然后自己试试。</p></a>
+												</div>
+											</article>
+											<article>
+												<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank" class="image"><img src="images/archy.jpg" alt="" /></a>
+												<div class="inner">
+													<a href="https://www.tinkercad.com/things/0yJoa0aUDbq-smashing-vihelmo-snicket/editv2?sharecode=NHU5YziaMzGN66gR_AV-WjiUbPLQsl36nvX2CjYIDoY=" target="_blank">
+													<h4>3D-轨交通运输系统 (3D 模型)</h4>
+													<p>汽车是很笨拙的。在一个拥堵的城市里，人是主要的运输物。3D-rails 是一个专为人设计的交通系统。它使用了高架的轻量级轨道， 以及轻量级的智能电动车系统；它可以让行人以30-50千米每秒的速度在城市里穿梭，完全不收到地面交通以及红绿灯的阻碍。</p></a>
+												</div>
+											</article>
+											<article>
+												<a href="https://gitee.com/martian2049/jtdemo.git" target="_blank" class="image"><img src="images/laizuoke.jpg" alt="" /></a>
+												<div class="inner">
+													<h4>仿 <a href="http://mlearning-tools.pingan.com.cn/learn/cwtools/#!/">来做客</a>(angularjs/vuejs)</h4>
+													<p>在网页上制作 <b>动画版的ppt</b>，在手机上浏览。这款网页的app是用来给大型企业内部做培训的，类似于平安知鸟的<a href="http://mlearning-tools.pingan.com.cn/learn/cwtools/#!/">“来做客”</a>，或者“易企秀”；也可以被用来做移动端的广告宣传活动。这是一个很复杂的网页应用，虽然未完成，但是基本的框架已经设计完毕。点击图画查看代码。</p>
+												</div>
+											</article>
+										</div>
+									</div>
+								</section>
+						</div>
+
+					<!-- Footer -->
+						<section id="footer">
+							<div class="container">
+								<ul class="copyright">
+									<li>2017 - 2019 屈霄 <br/>
+									邮箱: flying2mars_x@163.com <br/>
+									电话: +86-18257122431 <br/>
+									微信: iamwave007
+								</li>
+								</ul>
+							</div>
+						</section>
+				
+				</div>
+		</div>
 	</div>
 
 
@@ -154,12 +268,12 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-		seen: 1
+		seen: 1,
+		lang:"CH"
 	},
 	methods:{
-		gothis:function(index){
-			this.seen = index
-		}
+		gothis:function(index){this.seen = index},
+		switchLan:function(){this.lang == "CH"?this.lang="EN":this.lang="CH"}
 	}
 })
 
